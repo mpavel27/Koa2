@@ -1,0 +1,367 @@
+@font-face {
+    font-family: Trajan;
+    src: url('/assets/fonts/TrajanPro-Regular.ttf');
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif !important;
+    background-color: #190104 !important;
+}
+
+.navbar-background {
+    background: url('/assets/images/koa-nav.png');
+    background-position: center;
+    background-position-y: 0px;
+}
+
+.koa-logo {
+    width: 12rem;
+    height: 8rem;
+}
+
+.nav-link {
+    font-family: Trajan !important;
+    font-size: 15px;
+    background: -webkit-linear-gradient(#fbe9cf, #e5ae8a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px #f9be97a6;
+}
+
+.nav-links {
+    position: relative;
+    top: -12px;
+}
+
+.btn-koa {
+    background: url('/assets/images/koa-btn.png') !important;
+    height: 51px;
+    width: 190px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 !important;
+    font-family: Trajan !important;
+    color: #f8e8c9 !important;
+    text-shadow: 0px 2px 3px #64421a;
+    font-size: 16px !important;
+    box-shadow: 0px 2px 20px 0px #fbde7d4d;
+}
+
+.render {
+    background: url('/assets/images/koa-header.png');
+    height: 889px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.welcome {
+    margin: 0px;
+    font-size: 53px;
+    font-family: Trajan !important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(0deg, #6b632a, #f4f4b5, #6b632a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+.adventurer {
+    margin: 0px;
+    margin-top: -15px;
+    font-size: 53px;
+    font-family: Trajan !important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(0deg, #6b632a, #f4f4b5, #6b632a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.download-btn {
+    margin-top: -70px;
+}
+
+.render::after {
+    content: '';
+    position: absolute;
+    bottom: -39px;
+    background: url(/assets/images/koa-separator-down.png);
+    width: 100%;
+    height: 47px;
+    background-position: center;
+    z-index: 1;
+}
+
+.news {
+    background: url('/assets/images/koa-first-section-bg.png');
+    height: 596px;
+    position: relative;
+}
+
+.koa-card {
+    background-color: rgba(22,3,3,0.90);
+    border: 1px solid rgb(59, 20, 20, 0.73);
+    box-shadow: 0px 0px 20px #0000009e;
+    padding: 30px;
+}
+
+.koa-ranking-card-title {
+    font-family: Trajan !important;
+    font-size: 24px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #d0977a, #e8ccbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.koa-card-title {
+    font-family: Trajan !important;
+    font-size: 24px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #d0977a, #e8ccbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.ranking-title {
+    position: relative;
+}
+
+.ranking-title::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: linear-gradient(to right,#92665e 20%,#3c1818 20%);
+    left: 0;
+    bottom: -10px;
+}
+
+.koa-card-title::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: linear-gradient(to right,#92665e 20%,#3c1818 20%);
+    left: 0;
+    bottom: -18px;
+}
+
+.toggle-navbar {
+    display: none;
+}
+
+.right-navbar {
+    display: none;
+}
+
+#toggle_navbar_collapse {
+    display: none;
+}
+
+.koa-list p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #905959;
+    padding-left: 18px;
+    font-size: 15px;
+    position: relative;
+    font-weight: 600;
+}
+
+.koa-list-ranking p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #905959;
+    font-size: 15px;
+    position: relative;
+    font-weight: 600;
+}
+
+.koa-list-ranking p:first-child {
+    margin-top: 35px;
+}
+
+.koa-list p a {
+    text-decoration: none;
+    color: #905959;
+    font-weight: 600;
+}
+
+.koa-list p a:hover {
+    color: #b37070;
+}
+
+.koa-list p::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 0;
+    top: 9px;
+    border-radius: 50%;
+    background: #d0977a;
+}
+.koa-list p:first-child {
+    margin-top: 42px;
+}
+
+.news::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    background: url(/assets/images/koa-separator-up.png);
+    width: 100%;
+    height: 47px;
+    background-position: center;
+    z-index: 1;
+}
+
+.statistics {
+    position: relative;
+}
+
+.statistics::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    background: url(/assets/images/koa-separator-up.png);
+    width: 100%;
+    height: 47px;
+    background-position: center;
+    z-index: 1;
+}
+
+.ranking {
+    background: url(/assets/images/koa-ranking-section.png);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.ranking::after {
+    content: '';
+    position: absolute;
+    bottom: -39px;
+    background: url(/assets/images/koa-separator-down.png);
+    width: 100%;
+    height: 47px;
+    background-position: center;
+    z-index: 1;
+}
+
+.header {
+    justify-content: end;
+}
+
+.ranking-btn {
+    background-color: unset;
+    border: unset;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: 16px;
+    padding: 0;
+    color: #664040;
+}
+
+.ranking-btn.active {
+    color: #905959;
+    font-weight: 700;
+}
+
+.ranking-list {
+    font-family: Trajan !important;
+    color: #905959;
+    font-size: 16px;
+    padding-right: 14px;
+    border-right: 1px solid #35171c;
+    margin-right: 14px;
+}
+
+.beauty-text {
+    font-family: Trajan !important;
+    font-size: 16px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #d0977a, #e8ccbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.online {
+    font-family: Trajan !important;
+    font-size: 16px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #55a039, #2b6a1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.offline {
+    font-family: Trajan !important;
+    font-size: 16px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #9d3737, #721a1b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-2px -4px 17px black);
+}
+
+.koa-footer {
+    background: url(/assets/images/koa-footer-bg.png);
+    height: max-content;
+}
+
+.navbar-text {
+    font-family: Trajan !important;
+    font-size: 15px;
+    background: -webkit-linear-gradient(#fbe9cf, #e5ae8a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px #f9be97a6;
+}
+
+.btn:active, .btn:focus {
+    box-shadow: unset !important;
+}
+
+.modal-content {
+    background: url(/assets/images/koa-modal-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: unset !important;
+    border: 1px solid #3b1414 !important;
+    border-radius: 0 !important;
+}
+
+.custom-input {
+    border: unset;
+    padding: 10px 16px;
+    background-color: #0d0202;
+    border: 1px solid #3b1414;
+    outline: unset;
+    color: white;
+}
+
+.custom-input::placeholder {
+    color: #552c2c;
+}
+
+.btn-close {
+    position: absolute;
+    right: 20px;
+}
+
+.btn-close:active, .btn-close:focus {
+    box-shadow: unset !important;
+}
+
+.text-button {
+    background-color: unset;
+    border: unset;
+}

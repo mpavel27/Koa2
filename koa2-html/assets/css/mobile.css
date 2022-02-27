@@ -1,0 +1,101 @@
+@media only screen and (max-width: 990px) {
+    .navbar-background {
+        background-size: cover;
+        background-position: unset;
+    }
+    .toggle-navbar {
+        display: block;
+        border: none;
+        padding: 10px;
+        background: -webkit-linear-gradient(#fbe9cf, #e5ae8a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        text-shadow: 0px 0px 20px #f9be97a6;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+    }
+
+    .render {
+        background-position-x: right;
+    }
+    
+    .right-navbar {
+        display: block;
+        position: fixed;
+        right: -230px;
+        background: #270109;
+        box-shadow: 0 0 20px 6px #0000008c;
+        width: 230px;
+        height: 100%;
+        z-index: 1031;
+        padding: 25px;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    .right-navbar.active {
+        right: 0;
+        opacity: 1;
+    }
+
+    .right-navbar li {
+        margin-bottom: 15px;
+    }
+
+    .right-navbar li:last-child {
+        margin-bottom: 0;
+    }
+
+    .right-navbar .toggle-navbar {
+        position: absolute;
+        left: -60px;
+    }
+
+    .right-navbar .toggle-navbar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #150003;
+        box-shadow: 0 0 20px black;
+        z-index: -1;
+        border-radius: 50%;
+    }
+
+    .news {
+        height: 100%;
+    }
+
+    .news::after {
+        bottom: -9px;
+    }
+
+    .ranking {
+        background-position-x: right;
+    }
+
+    .header {
+        justify-content: center !important;
+    }
+
+    .ranking-list {
+        margin-right: 9px;
+        padding-right: 9px;
+    }
+
+    .footer-navs {
+        display: none !important;
+    }
+
+    .koa-footer .justify-content-between {
+        justify-content: center !important;
+    }
+}
