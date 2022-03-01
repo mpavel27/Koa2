@@ -93,16 +93,25 @@
 </nav>
 <header class="render">
     <div class="container">
-        <div class="header row mt-5">
+        <div class="header row">
             <div class="col-md-6 d-flex justify-content-center">
                 <div class="d-flex flex-column text-center">
-                    <h1 class="welcome">WELCOME</h1>
-                    <h1 class="adventurer">ADVENTURER</h1>
-                    <p class="mt-5" style="color: #e3dea0;">Join your adventure, select one of four unique classes. Choose between three old<br>kingdoms:<br>Jinno - Kingdom of the Old Black OX, Shinsoo - Kingdom of the Red Serpent<br>and Chunjo - Kingdom of the Old Golden Fire Serpent.</p>
-                    <p style="color: #e3dea0;">Fight for your freedom, your adventures awaits for you now.</p>
-                    <a href="#">
-                        <img class="download-btn" src="/assets/images/koa-download-btn.png" alt="Download">
-                    </a>
+{{--                    <h1 class="welcome">WELCOME</h1>--}}
+{{--                    <h1 class="adventurer">ADVENTURER</h1>--}}
+{{--                    <p class="mt-5" style="color: #e3dea0;">Join your adventure, select one of four unique classes. Choose between three old<br>kingdoms:<br>Jinno - Kingdom of the Old Black OX, Shinsoo - Kingdom of the Red Serpent<br>and Chunjo - Kingdom of the Old Golden Fire Serpent.</p>--}}
+{{--                    <p style="color: #e3dea0;">Fight for your freedom, your adventures awaits for you now.</p>--}}
+                    <div class="ch-zone mb-3">
+                        <a class="download-btn" href="#">
+                            <img src="/assets/images/koa-download-btn.png" alt="Download">
+                        </a>
+                        <img class="ch-bg" src="/assets/images/koa-ch.png">
+                        <img class="ch-1" src="/assets/images/koa-ch-section.png">
+                        <img class="ch-2" src="/assets/images/koa-ch-section.png">
+                        <img class="ch-3" src="/assets/images/koa-ch-section.png">
+                        <img class="ch-4" src="/assets/images/koa-ch-section.png">
+                        <img class="ch-5" src="/assets/images/koa-ch-section.png">
+                        <img class="ch-6" src="/assets/images/koa-ch-section.png">
+                    </div>
                     <p class="m-0" style="color: #e3dea0;">Not Registered yet?</p>
                     <a type="button" class="m-0 text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal">Create a new Account</a>
                 </div>

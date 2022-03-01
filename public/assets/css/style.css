@@ -79,10 +79,6 @@ body {
     filter: drop-shadow(-2px -4px 17px black);
 }
 
-.download-btn {
-    margin-top: -70px;
-}
-
 .render::after {
     content: '';
     position: absolute;
@@ -241,6 +237,9 @@ body {
     background-position-y: center;
     background-repeat: no-repeat;
     position: relative;
+    height: 693px;
+    display: flex;
+    align-items: center;
 }
 
 .ranking::after {
@@ -375,5 +374,65 @@ body {
     color: #a45f5f;
 }
 
+.download-btn {
+    z-index: 10;
+}
 
+.ch-zone {
+    /*background: url(/assets/images/koa-ch.png);*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    width: 454px;
+    height: 414px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ch-bg {
+    position: absolute;
+    animation: rotation 10s infinite linear;
+}
+
+.ch-1 {
+    position: absolute;
+    left: 15px;
+}
+
+.ch-2 {
+    position: absolute;
+    bottom: 45px;
+    left: 65px;
+}
+
+.ch-3 {
+    position: absolute;
+    left: 65px;
+    top: 45px;
+}
+
+.ch-4 {
+    position: absolute;
+    right: 10px;
+}
+.ch-5 {
+    position: absolute;
+    bottom: 45px;
+    right: 65px;
+}
+.ch-6 {
+    position: absolute;
+    top: 45px;
+    right: 65px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
 
