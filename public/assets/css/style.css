@@ -251,6 +251,7 @@ body {
 .ranking {
     background: url(/assets/images/koa-ranking-section.png);
     background-position-y: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     position: relative;
     height: 693px;
