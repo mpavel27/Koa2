@@ -34,7 +34,8 @@ class User extends Authenticatable
         'login',
         'password',
         'email',
-        'social_id'
+        'social_id',
+        'create_time'
     ];
 
     public function setPasswordAttribute($password)
@@ -50,8 +51,7 @@ class User extends Authenticatable
         'autoloot_expire' => '2035-05-05 21:00:00',
         'fish_mind_expire' => '2035-05-05 21:00:00',
         'marriage_fast_expire' => '2035-05-05 21:00:00',
-        'money_drop_rate_expire' => '2035-05-05 21:00:00',
-        'create_time' => '2035-05-05 21:00:00',
+        'money_drop_rate_expire' => '2035-05-05 21:00:00'
     ];
 
     /**

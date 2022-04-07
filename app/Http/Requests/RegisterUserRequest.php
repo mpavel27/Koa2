@@ -32,7 +32,7 @@ class RegisterUserRequest extends FormRequest
     {
         return [
             'login' => 'required|string|unique:account|max:16',
-            'password' => 'required|string|confirmed|max:16|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/',
+            'password' => 'required|string|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/',
             'email' => 'required|string|email|unique:account',
             'social_id' => 'required|string|max:7'
         ];

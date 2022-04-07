@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -26,4 +27,14 @@ Route::prefix('/register')->group(function () {
     Route::post('/validate', [RegisterController::class, 'register']);
 });
 
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::prefix('/user')->middleware('auth')->group(function () {
+    Route::get('/', [UserController::class, 'view'])->name('app.user');
+    Route::get('/characters', [UserController::class, 'viewCharacters'])->name('app.user.characters');
+    Route::post('/character-debug/{id}', [UserController::class, 'debugCharacter'])->name('app.user.character.debug');
+});
+
+Route::get('/test', [MainController::class, 'getTopGuilds']);
+
+Route::get('/checkPort/{port}', [MainController::class, 'checkPortOpen']);
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('app.logout');

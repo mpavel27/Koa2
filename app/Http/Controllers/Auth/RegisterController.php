@@ -9,6 +9,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Http\Controllers\MainController;
+use DateTime;
+use DateTimeZone;
+use Illuminate\Support\Facades\Date;
 
 class RegisterController extends Controller
 {
@@ -34,11 +37,15 @@ class RegisterController extends Controller
                 return redirect()->back();
             }
 
-            $create = User::create($request->except('_token'));
+            $date = new DateTime("now", new DateTimeZone('Europe/Bucharest'));
+            $data = $request->except('_token');
+            $data['create_time'] = $date->format('Y-m-d H:i:s');
+            $create = User::create($data);
             if ($create) {
-                $user = User::where('login', $request->login)->where('email', $request->email)->where('password', MainController::toMD5($request->password))->first();
+                $user = User::where('login', $data['login'])->where('email', $data['email'])->where('password', MainController::toMD5($data['password']))->first();
                 Auth::login($user);
                 toastr()->success('Te-ai inregistrat cu succes');
+                return redirect()->back();
             }
         }
         return redirect()->route('app.home');
