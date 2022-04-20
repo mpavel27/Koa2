@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
     <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     @toastr_css
     <style>
         .toast {
@@ -36,14 +40,14 @@
         </li>
         @if(!Auth::user())
             <li>
-                <button type="button" class="navbar-text text-decoration-none border-0" data-bs-toggle="modal" data-bs-target="#registerModal">RANKING</button>
+                <button type="button" class="navbar-text text-decoration-none border-0" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button>
             </li>
         @endif
         <li>
             <a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a>
         </li>
         <li>
-            <a class="navbar-text text-decoration-none" href="#">RANKING</a>
+            <a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a>
         </li>
         <li>
             <a class="navbar-text text-decoration-none" href="#">FORUM</a>
@@ -78,7 +82,7 @@
                     <a class="nav-link" href="#">DOWNLOAD</a>
                 </li>
                 <li class="nav-item mx-4">
-                    <a class="nav-link" href="#">RANKING</a>
+                    <a class="nav-link" href="{{ route('app.ranking') }}">RANKING</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">FORUM</a>
@@ -182,7 +186,7 @@
                             <li><button type="button" class="navbar-text text-decoration-none border-0 p-0" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button></li>
                         @endif
                         <li><a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a></li>
-                        <li><a class="navbar-text text-decoration-none" href="#">RANKING</a></li>
+                        <li><a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a></li>
                         <li><a class="navbar-text text-decoration-none" href="#">FORUM</a></li>
                         <li><a class="navbar-text text-decoration-none" href="#">SUPPORT</a></li>
                     </ul>
@@ -255,7 +259,6 @@
 
     <!-- End Modals -->
 @endif
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/scripts.js"></script>
 @toastr_js
 @toastr_render

@@ -547,3 +547,49 @@ body {
 .table>:not(:first-child) {
     border-top: 0 !important;
 }
+
+.form-control {
+    background: #140103 !important;
+    border: 1px solid #20090c !important;
+    color: white !important;
+}
+
+.form-control:focus {
+    box-shadow: unset !important;
+}
+
+.form-select:focus {
+    box-shadow: unset !important;
+}
+
+.form-select {
+    background: #140103 !important;
+    border: 1px solid #20090c !important;
+    color: white !important;
+}
+
+
+.page-link {
+    color: #9b9999 !important;
+    background-color: #140103 !important;
+    border: 1px solid #250e11 !important;
+}
+
+.page-link:focus {
+    box-shadow: unset !important;
+}
+
+.page-item.active .page-link {
+    color: #fff !important;
+    background-color: #cb9f61 !important;
+    border-color: #cb9f61 !important;
+}
+
+.unstyled-btn {
+    background: unset;
+    color: white;
+    padding: 0;
+    margin: 0;
+    border: unset;
+    outline: unset;
+}

@@ -36,4 +36,13 @@ class LoginController extends Controller
         }
         return redirect()->back();
     }
+
+    public function viewLogin() {
+        $ch1 = MainController::checkPortOpen(env('CH1_PORT'));
+        $ch2 = MainController::checkPortOpen(env('CH2_PORT'));
+        $ch3 = MainController::checkPortOpen(env('CH3_PORT'));
+        $ch4 = MainController::checkPortOpen(env('CH4_PORT'));
+        $players = MainController::getAllPlayers();
+        return view('auth.login', compact(['ch1', 'ch2', 'ch3', 'ch4', 'players']));
+    }
 }

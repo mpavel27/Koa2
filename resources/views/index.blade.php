@@ -86,17 +86,6 @@
                             </p>
                         @endforeach
                     </div>
-{{--                    <div class="koa-list-ranking" id="guilds">--}}
-{{--                        @foreach($topGuilds as $key => $guild)--}}
-{{--                        <p><span class="ranking-list">--}}
-{{--                                @if(strlen($key+1) == 2)--}}
-{{--                                    {{ $key+1 }}.--}}
-{{--                                @else--}}
-{{--                                    0{{ $key+1 }}.--}}
-{{--                                @endif--}}
-{{--                            </span><span class="ranking-list" style="color: #ca7c7c;">{{ $guild->name }}</span><span class="ranking-list">{{ \App\Http\Controllers\MainController::getGuildMasterName($guild->master) }}</span><span class="ranking-list" style="color: @if(\App\Http\Controllers\MainController::getGuildEmpire($guild->master) == 2) #ffa853 @elseif(\App\Http\Controllers\MainController::getGuildEmpire($guild->master) == 3) #53b4ff @elseif(\App\Http\Controllers\MainController::getGuildEmpire($guild->master) == 1) #ff535d @endif ">{{ \App\Http\Controllers\MainController::getGuildEmpireName($guild->master) }}</span><span class="ranking-list">{{ $guild->level }}</span><span class="ranking-list border-0">{{ $guild->ladder_point }}</span></p>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>

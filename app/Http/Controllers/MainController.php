@@ -103,7 +103,25 @@ class MainController extends Controller
         return $topPlayers;
     }
 
-    public function getClassNameByJob($id) {
+    public static function getAllPlayers()
+    {
+        $players = Player::with('index')->where('name', 'not like', '%[%')
+            ->orderBy('level', 'DESC')
+            ->orderBy('exp', 'DESC')
+            ->get();
+        $topPlayers = [];
+        foreach($players as $key => $player) {
+            $topPlayers[$key+1] = [
+                'name' => $player->name,
+                'class' => MainController::getClassNameByJob($player->job),
+                'empire' => MainController::getEmpireName($player->index->empire),
+                'level' => $player->level
+            ];
+        }
+        return $topPlayers;
+    }
+
+    public static function getClassNameByJob($id) {
         if($id == 0 || $id == 4) {
             return 'Warrior';
         } elseif($id == 1 || $id == 5) {
@@ -128,7 +146,7 @@ class MainController extends Controller
         }
     }
 
-    public function getEmpireName($empire) {
+    public static function getEmpireName($empire) {
         switch($empire) {
             case 1:
                 return 'Shinsoo'; // rosu
@@ -156,6 +174,27 @@ class MainController extends Controller
                 'gold' => $guild->gold,
                 'leader' => $guild->masterTable->name,
                 'empire' => $this->getEmpireName($guild->masterTable->index->empire)
+            ];
+        }
+        return $topGuilds;
+    }
+
+    public static function getAllGuilds() {
+        $guilds = Guild::with('masterTable.index')->orderBy('win', 'DESC')
+            ->orderBy('ladder_point', 'DESC')
+            ->orderBy('level', 'DESC')
+            ->orderBy('exp', 'DESC')
+            ->get();
+        $topGuilds = [];
+        foreach($guilds as $key => $guild) {
+            $topGuilds[$key+1] = [
+                'name' => $guild->name,
+                'master' => $guild->master,
+                'level' => $guild->level,
+                'ladder_point' => $guild->ladder_point,
+                'gold' => $guild->gold,
+                'leader' => $guild->masterTable->name,
+                'empire' => MainController::getEmpireName($guild->masterTable->index->empire)
             ];
         }
         return $topGuilds;
