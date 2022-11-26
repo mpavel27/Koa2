@@ -98,4 +98,9 @@
     .koa-footer .justify-content-between {
         justify-content: center !important;
     }
+
+    .header-video {
+        position: absolute;
+        right: -307px;
+    }
 }
