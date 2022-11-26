@@ -39,7 +39,7 @@ class MainController extends Controller
         ]));
     }
 
-    public function toMD5($pass, $hex = true)
+    public static function toMD5($pass, $hex = true)
     {
         $pass_st1 = sha1($pass, true);
         $output = sha1($pass_st1, !$hex);
@@ -47,11 +47,13 @@ class MainController extends Controller
     }
 
     public static function checkPortOpen($port) {
-        if(@fsockopen(env('SERVER_IP'), $port)) {
-            return true;
-        } else {
-            return false;
-        }
+        // return dd($port);
+        // if(@fsockopen(env('SERVER_IP'), $port)) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        return true;
     }
 
     public function getPlayersOnline()

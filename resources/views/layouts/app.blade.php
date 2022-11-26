@@ -50,11 +50,11 @@
             <a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a>
         </li>
         <li>
-            <a class="navbar-text text-decoration-none" href="#">FORUM</a>
+            <a class="navbar-text text-decoration-none" href="#">DISCORD</a>
         </li>
-        <li>
+        <!-- <li>
             <a class="navbar-text text-decoration-none" href="#">SUPPORT</a>
-        </li>
+        </li> -->
         <li>
             @if(Auth::user())
                 <a href="{{ route('app.user') }}" class="btn btn-koa me-2">{{ Auth::user()->login }}</a>
@@ -85,11 +85,11 @@
                     <a class="nav-link" href="{{ route('app.ranking') }}">RANKING</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">FORUM</a>
+                    <a class="nav-link" href="#">DISCORD</a>
                 </li>
-                <li class="nav-item mx-4">
+                <!-- <li class="nav-item mx-4">
                     <a class="nav-link" href="#">SUPPORT</a>
-                </li>
+                </li> -->
             </ul>
             <div class="d-flex">
                 @if(Auth::user())
@@ -102,7 +102,10 @@
     </div>
 </nav>
 <header class="render">
-    <div class="container">
+    <video class="header-video play" muted="" loop="" autoplay="">
+        <source src="/assets/video/header.mp4" type="video/mp4">
+    </video>
+    <!-- <div class="container">
         <div class="header row">
             <div class="col-md-6 d-flex justify-content-center">
                 <div class="d-flex flex-column text-center">
@@ -171,7 +174,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </header>
 @yield('main-container')
 <footer class="koa-footer">
@@ -187,8 +190,8 @@
                         @endif
                         <li><a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a></li>
                         <li><a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a></li>
-                        <li><a class="navbar-text text-decoration-none" href="#">FORUM</a></li>
-                        <li><a class="navbar-text text-decoration-none" href="#">SUPPORT</a></li>
+                        <li><a class="navbar-text text-decoration-none" href="#">DISCORD</a></li>
+                        <!-- <li><a class="navbar-text text-decoration-none" href="#">SUPPORT</a></li> -->
                     </ul>
                 </div>
             </div>
