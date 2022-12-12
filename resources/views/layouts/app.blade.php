@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="ro">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Metin2,Pserver,P Server,metin2 pserver, metin 2 pserver,mt2 p server,metin p server, koa2, koa, kingdom of ash">
+    <meta name="description" content="Kingdom of ash - Private Metin2 server with a lot of PVM/PVP content">
     <title>Kingdom of Ash - Metin2</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <meta name="copyright" content="(c) Kingdom of Ash">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-shims.min.css" media="all">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-font-face.min.css" media="all">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" media="all">
@@ -30,10 +34,19 @@
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYQYLZVL6M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FYQYLZVL6M');
+</script>
 <body>
 <div class="right-navbar" id="mobile_navbar">
     <button class="toggle-navbar" id="toggle_navbar_collapse"><i class="fas fa-times"></i></button>
-    <img class="mb-4" src="/assets/images/koa_logo_transparent.png" height="100">
+    <img class="mb-4" src="/assets/images/koa_logo_transparent.png" alt="Kingdom of Ash" height="100">
     <ul class="list-unstyled m-0 text-center">
         <li>
             <a class="navbar-text text-decoration-none" href="{{ route('app.home') }}">HOME</a>
@@ -50,7 +63,7 @@
             <a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a>
         </li>
         <li>
-            <a class="navbar-text text-decoration-none" href="#">DISCORD</a>
+            <a class="navbar-text text-decoration-none" href="https://discord.gg/koa2" target="_black">DISCORD</a>
         </li>
         <!-- <li>
             <a class="navbar-text text-decoration-none" href="#">SUPPORT</a>
@@ -85,7 +98,7 @@
                     <a class="nav-link" href="{{ route('app.ranking') }}">RANKING</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">DISCORD</a>
+                    <a class="nav-link" href="https://discord.gg/koa2" target="_black">DISCORD</a>
                 </li>
                 <!-- <li class="nav-item mx-4">
                     <a class="nav-link" href="#">SUPPORT</a>
@@ -181,7 +194,7 @@
     <div class="container">
         <div class="py-4">
             <div class="d-flex justify-content-between align-items-center">
-                <img src="/assets/images/koa_logo.png" height="80">
+                <img src="/assets/images/koa_logo.png" alt="Kingdom of Ash" height="80">
                 <div class="footer-navs">
                     <ul class="list-unstyled d-flex gap-4 m-0">
                         <li><a class="navbar-text text-decoration-none" href="{{ route('app.home') }}">HOME</a></li>
@@ -265,5 +278,6 @@
 <script src="/assets/js/scripts.js"></script>
 @toastr_js
 @toastr_render
+
 </body>
 </html>
