@@ -7,6 +7,8 @@ use App\Http\Controllers\RankingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
+use App\Http\Controllers\ItemShop\MainController as ItemShopController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +41,10 @@ Route::prefix('/ranking')->middleware('auth')->group(function () {
     Route::get('/', [RankingController::class, 'viewPlayers'])->name('app.ranking');
     Route::get('/players', [RankingController::class, 'viewPlayers'])->name('app.ranking.players');
     Route::get('/guilds', [RankingController::class, 'viewGuilds'])->name('app.ranking.guilds');
+});
+
+Route::prefix('/ishop')->middleware('auth')->group(function () {
+    Route::get('/', [ItemShopController::class, 'viewItemShop'])->name('app.itemshop.home');
 });
 
 Route::get('/test', [MainController::class, 'getTopGuilds']);
