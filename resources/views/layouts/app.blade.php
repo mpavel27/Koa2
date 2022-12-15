@@ -8,6 +8,7 @@
     <title>Kingdom of Ash - Metin2</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <meta name="copyright" content="(c) Kingdom of Ash">
+    <meta property="og:image" content="{{ asset('assets/images/koa_banner.png') }}" />
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-shims.min.css" media="all">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-font-face.min.css" media="all">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" media="all">
@@ -65,6 +66,11 @@
         <li>
             <a class="navbar-text text-decoration-none" href="https://discord.gg/koa2" target="_black">DISCORD</a>
         </li>
+        @if(Auth::user())
+        <li>
+            <a class="navbar-text text-decoration-none" href="{{ route('app.itemshop.home') }}">ITEM SHOP</a>
+        </li>
+        @endif
         <!-- <li>
             <a class="navbar-text text-decoration-none" href="#">SUPPORT</a>
         </li> -->
@@ -100,6 +106,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://discord.gg/koa2" target="_black">DISCORD</a>
                 </li>
+                @if(Auth::user())
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="{{ route('app.itemshop.home') }}">ITEM SHOP</a>
+                </li>
+                @endif
                 <!-- <li class="nav-item mx-4">
                     <a class="nav-link" href="#">SUPPORT</a>
                 </li> -->
