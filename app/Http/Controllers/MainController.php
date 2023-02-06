@@ -41,9 +41,9 @@ class MainController extends Controller
 
     public static function toMD5($pass, $hex = true)
     {
-        $pass_st1 = sha1($pass, true);
-        $output = sha1($pass_st1, !$hex);
-        return '*' . strtoupper($output);
+        // $pass_st1 = sha1($pass, true);
+        $output = sha1($pass, !$hex);
+        return $output;
     }
 
     public static function checkPortOpen($port) {

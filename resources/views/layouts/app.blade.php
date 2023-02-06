@@ -208,13 +208,14 @@
                 <img src="/assets/images/koa_logo.png" alt="Kingdom of Ash" height="80">
                 <div class="footer-navs">
                     <ul class="list-unstyled d-flex gap-4 m-0">
-                        <li><a class="navbar-text text-decoration-none" href="{{ route('app.home') }}">HOME</a></li>
+                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="{{ route('app.home') }}">HOME</a></li>
                         @if(!Auth::user())
-                            <li><button type="button" class="navbar-text text-decoration-none border-0 p-0" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button></li>
+                            <li class="d-flex align-items-center"><button type="button" class="navbar-text text-decoration-none border-0 p-0" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button></li>
                         @endif
-                        <li><a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a></li>
-                        <li><a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a></li>
-                        <li><a class="navbar-text text-decoration-none" href="#">DISCORD</a></li>
+                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a></li>
+                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a></li>
+                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="#">DISCORD</a></li>
+                        <li class="d-flex align-items-center"><a href="https://m2dev.ro/" target="_blank"><img src="{{ asset('/assets/images/partnership/m2dev.png') }}" alt="Metin2Dev" rel="nofollow" width="100"></a></li>
                         <!-- <li><a class="navbar-text text-decoration-none" href="#">SUPPORT</a></li> -->
                     </ul>
                 </div>
