@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Player;
+use App\Models\Settings;
 
 class UserController extends Controller
 {
@@ -93,5 +94,26 @@ class UserController extends Controller
             }
 
         }
+    }
+
+    public function viewDownload() {
+        $ch1 = MainController::checkPortOpen(env('CH1_PORT'));
+        $ch2 = MainController::checkPortOpen(env('CH2_PORT'));
+        $ch3 = MainController::checkPortOpen(env('CH3_PORT'));
+        $ch4 = MainController::checkPortOpen(env('CH4_PORT'));
+        $user = Auth::user();
+        $characters = $this->getUserCharacters(Auth::user()->id);
+        $megaLink = Settings::where('variable', 'megaDownload')->first();
+        $driveLink = Settings::where('variable', 'driveDownload')->first();
+        return view('download', compact([
+            'ch1',
+            'ch2',
+            'ch3',
+            'ch4',
+            'user',
+            'characters',
+            'megaLink',
+            'driveLink'
+        ]));
     }
 }

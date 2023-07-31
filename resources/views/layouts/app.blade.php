@@ -58,7 +58,7 @@
             </li>
         @endif
         <li>
-            <a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a>
+            <a class="navbar-text text-decoration-none" href="{{ route('app.user.download') }}">DOWNLOAD</a>
         </li>
         <li>
             <a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a>
@@ -68,7 +68,7 @@
         </li>
         @if(Auth::user())
         <li>
-            <a class="navbar-text text-decoration-none" href="{{ route('app.itemshop.home') }}">ITEM SHOP</a>
+            <a class="navbar-text text-decoration-none" target="_blank" href="https://ishop.koa2.ro/">ITEM SHOP</a>
         </li>
         @endif
         <!-- <li>
@@ -98,7 +98,7 @@
                     </li>
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link" href="#">DOWNLOAD</a>
+                    <a class="nav-link" href="{{ route('app.user.download') }}">DOWNLOAD</a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link" href="{{ route('app.ranking') }}">RANKING</a>
@@ -108,7 +108,7 @@
                 </li>
                 @if(Auth::user())
                 <li class="nav-item mx-4">
-                    <a class="nav-link" href="{{ route('app.itemshop.home') }}">ITEM SHOP</a>
+                    <a class="nav-link" href="https://ishop.koa2.ro/" target="_blank">ITEM SHOP</a>
                 </li>
                 @endif
                 <!-- <li class="nav-item mx-4">
@@ -212,7 +212,7 @@
                         @if(!Auth::user())
                             <li class="d-flex align-items-center"><button type="button" class="navbar-text text-decoration-none border-0 p-0" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button></li>
                         @endif
-                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="#">DOWNLOAD</a></li>
+                        <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="{{ route('app.user.download') }}">DOWNLOAD</a></li>
                         <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="{{ route('app.ranking') }}">RANKING</a></li>
                         <li class="d-flex align-items-center"><a class="navbar-text text-decoration-none" href="#">DISCORD</a></li>
                         <li class="d-flex align-items-center"><a href="https://m2dev.ro/" target="_blank"><img src="{{ asset('/assets/images/partnership/m2dev.png') }}" alt="Metin2Dev" rel="nofollow" width="100"></a></li>

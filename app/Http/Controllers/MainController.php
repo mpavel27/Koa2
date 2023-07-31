@@ -41,19 +41,17 @@ class MainController extends Controller
 
     public static function toMD5($pass, $hex = true)
     {
-        // $pass_st1 = sha1($pass, true);
-        $output = sha1($pass, !$hex);
-        return $output;
+        $pass_st1 = sha1($pass, true);
+        $output = sha1($pass_st1, !$hex);
+        return '*' . strtoupper($output);
     }
 
     public static function checkPortOpen($port) {
-        // return dd($port);
-        // if(@fsockopen(env('SERVER_IP'), $port)) {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-        return true;
+        if(@fsockopen(env('SERVER_IP'), $port)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getPlayersOnline()

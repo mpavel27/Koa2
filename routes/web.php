@@ -43,14 +43,17 @@ Route::prefix('/ranking')->middleware('auth')->group(function () {
     Route::get('/guilds', [RankingController::class, 'viewGuilds'])->name('app.ranking.guilds');
 });
 
-Route::prefix('/ishop')->middleware('auth')->group(function () {
-    Route::get('/', [ItemShopController::class, 'viewItemShop'])->name('app.itemshop.home');
-    Route::get('/products', [ItemShopController::class, 'products'])->name('app.itemshop.products');
-});
-Route::get('/logmein/{player_id}/{sas}', [ItemShopController::class, 'login'])->name('app.itemshop.login');
+Route::get('/download', [UserController::class, 'viewDownload'])->name('app.user.download')->middleware('auth');
 
-Route::get('/test', [ItemShopController::class, 'testview']);
+// Route::prefix('/ishop')->middleware('auth')->group(function () {
+//     Route::get('/', [ItemShopController::class, 'viewItemShop'])->name('app.itemshop.home');
+//     Route::get('/products', [ItemShopController::class, 'products'])->name('app.itemshop.products');
+// });
 
-Route::get('/checkPort/{port}', [MainController::class, 'checkPortOpen']);
+// Route::get('/logmein/{player_id}/{sas}', [ItemShopController::class, 'login'])->name('app.itemshop.login');
+
+// Route::get('/test', [ItemShopController::class, 'testview']);
+
+// Route::get('/checkPort/{port}', [MainController::class, 'checkPortOpen']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('app.logout');

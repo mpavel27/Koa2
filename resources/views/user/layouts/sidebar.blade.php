@@ -18,3 +18,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(() => {
+        $('html, body').animate({
+            scrollTop: $(".user").offset().top
+        }, 1000);
+    })
+</script>

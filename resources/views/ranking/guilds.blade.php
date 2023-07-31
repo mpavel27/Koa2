@@ -10,7 +10,7 @@
                         <a class="text-decoration-none ranking-btn active" href="{{ route('app.ranking.guilds') }}">Guilds</a>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table id="ranking_players_table" class="table table-striped table-hover table-bordered m-0">
                         <thead>
                         <tr>
