@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -44,6 +45,10 @@ Route::prefix('/ranking')->middleware('auth')->group(function () {
 });
 
 Route::get('/download', [UserController::class, 'viewDownload'])->name('app.user.download')->middleware('auth');
+
+Route::prefix('/board')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/', [AdminController::class, 'viewIndex'])->name('app.admin.home');
+});
 
 // Route::prefix('/ishop')->middleware('auth')->group(function () {
 //     Route::get('/', [ItemShopController::class, 'viewItemShop'])->name('app.itemshop.home');

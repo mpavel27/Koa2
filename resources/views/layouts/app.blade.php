@@ -34,6 +34,13 @@
             border-radius: 6px !important;
         }
     </style>
+    <script>
+    $(document).ready(() => {
+        $('html, body').animate({
+            scrollTop: $(".user").offset().top
+        }, 1000);
+    })
+</script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYQYLZVL6M"></script>

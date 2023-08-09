@@ -54,25 +54,25 @@ class MainController extends Controller
         }
     }
 
-    public function getPlayersOnline()
+    public static function getPlayersOnline()
     {
         $online = Player::where('last_play', '>', DB::raw('DATE_SUB(NOW(), INTERVAL 5 MINUTE)'))->count();
         return $online;
     }
 
-    public function getPlayersOnline24h()
+    public static function getPlayersOnline24h()
     {
         $online = Player::where('last_play', '>', DB::raw('DATE_SUB(NOW(), INTERVAL 24 HOUR)'))->count();
         return $online;
     }
 
-    public function getAccountsCount()
+    public static function getAccountsCount()
     {
         $accounts = User::count();
         return $accounts;
     }
 
-    public function getPlayersCount()
+    public static function getPlayersCount()
     {
         $players = Player::count();
         return $players;
