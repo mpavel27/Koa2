@@ -7,13 +7,12 @@
                 <div class="koa-card mb-4">
                     <h3 class="koa-card-title">Latest News</h3>
                     <div class="koa-list">
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
-                        <p><a href='#' class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a></p>
+                        @foreach($news as $new)
+                        <p><a href='{{ route("app.news", $new->id) }}' class="news-text">{{ $new->title }}</a></p>
+                        @endforeach
+                        @if(count($news) == 0)
+                        <p>There aren't any news available at the moment.</p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -21,13 +20,12 @@
                 <div class="koa-card" style="margin-bottom: 4rem;">
                     <h3 class="koa-card-title">Upcoming Events</h3>
                     <div class="koa-list">
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
-                        <p class="d-flex justify-content-between"><span>OX Event #1</span><span>18.01.2022 - 18:30</span></p>
+                        @foreach($events as $event)
+                        <p class="d-flex justify-content-between"><span>{{ $event->title }}</span><span>{{ date('d.m.Y - H:i', strtotime($event->event_date)) }}</span></p>
+                        @endforeach
+                        @if(count($events) == 0)
+                        <p>There aren't any events available at the moment.</p>
+                        @endif
                     </div>
                 </div>
             </div>

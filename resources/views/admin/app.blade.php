@@ -10,6 +10,9 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <meta name="copyright" content="(c) Kingdom of Ash">
     <meta property="og:image" content="{{ asset('assets/images/koa_banner.png') }}" />
+	<script src="//cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	@toastr_css
 
 	<title>Koa2 - Admin Board</title>
 
@@ -26,27 +29,33 @@
                 </a>
 
 				<ul class="sidebar-nav">
-					<li class="sidebar-item active">
+					<li class="sidebar-item @if(Request::path() == 'board') active @endif">
 						<a class="sidebar-link" href="{{ route('app.admin.home') }}">
                             <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                         </a>
 					</li>
 
-                    <li class="sidebar-item">
-						<a class="sidebar-link" href="{{ route('app.admin.home') }}">
+                    <li class="sidebar-item @if(Request::path() == 'board/news') active @endif">
+						<a class="sidebar-link" href="{{ route('app.admin.news') }}">
                             <i class="align-middle" data-feather="folder"></i> <span class="align-middle">Manage news</span>
                         </a>
 					</li>
 
-                    <li class="sidebar-item">
-						<a class="sidebar-link" href="{{ route('app.admin.home') }}">
-                            <i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Add news</span>
+                    <li class="sidebar-item @if(Request::path() == 'board/news/create') active @endif">
+						<a class="sidebar-link" href="{{ route('app.admin.news.create') }}">
+                            <i class="align-middle" data-feather="folder-plus"></i> <span class="align-middle">Add news</span>
                         </a>
 					</li>
 
-                    <li class="sidebar-item">
-						<a class="sidebar-link" href="{{ route('app.admin.home') }}">
+                    <li class="sidebar-item @if(Request::path() == 'board/events') active @endif">
+						<a class="sidebar-link" href="{{ route('app.admin.events') }}">
                             <i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Events</span>
+                        </a>
+					</li>
+
+					<li class="sidebar-item @if(Request::path() == 'board/events/create') active @endif">
+						<a class="sidebar-link" href="{{ route('app.admin.events.create') }}">
+                            <i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Add event</span>
                         </a>
 					</li>
 
@@ -332,7 +341,8 @@
 			});
 		});
 	</script>
-
+	@toastr_js
+	@toastr_render
 </body>
 
 </html>

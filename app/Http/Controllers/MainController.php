@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Player;
 use App\Models\User;
 use App\Models\Guild;
+use App\Models\News;
+use App\Models\Events;
 use App\Models\PlayerIndex;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -24,6 +26,8 @@ class MainController extends Controller
         $guilds = $this->getGuildsCount();
         $topPlayers = $this->getTopPlayers();
         $topGuilds = $this->getTopGuilds();
+        $news = News::limit(7)->orderBy('id', 'DESC')->get();
+        $events = Events::limit(7)->orderBy('id', 'DESC')->get();
         return view('index', compact([
             'ch1',
             'ch2',
@@ -35,7 +39,9 @@ class MainController extends Controller
             'characters',
             'guilds',
             'topPlayers',
-            'topGuilds'
+            'topGuilds',
+            'news',
+            'events'
         ]));
     }
 
@@ -198,5 +204,21 @@ class MainController extends Controller
             ];
         }
         return $topGuilds;
+    }
+
+    public static function getUsernameById($id) {
+        $user = User::where('id', $id)->first();
+        return $user->login;
+    }
+
+    public function viewNews($id) {
+        $ch1 = MainController::checkPortOpen(env('CH1_PORT'));
+        $ch2 = MainController::checkPortOpen(env('CH2_PORT'));
+        $ch3 = MainController::checkPortOpen(env('CH3_PORT'));
+        $ch4 = MainController::checkPortOpen(env('CH4_PORT'));
+
+        $news = News::where('id', $id)->first();
+
+        return view('news.news', compact(['ch1', 'ch2', 'ch3', 'ch4', 'news']));
     }
 }

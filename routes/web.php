@@ -44,10 +44,26 @@ Route::prefix('/ranking')->middleware('auth')->group(function () {
     Route::get('/guilds', [RankingController::class, 'viewGuilds'])->name('app.ranking.guilds');
 });
 
+Route::get('/news/{id}', [MainController::class, 'viewNews'])->name('app.news');
+
 Route::get('/download', [UserController::class, 'viewDownload'])->name('app.user.download')->middleware('auth');
 
 Route::prefix('/board')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [AdminController::class, 'viewIndex'])->name('app.admin.home');
+
+    /* Events */
+    Route::get('/events', [AdminController::class, 'viewEvents'])->name('app.admin.events');
+    Route::get('/events/create', [AdminController::class, 'viewCreateEvents'])->name('app.admin.events.create');
+    Route::post('/events/create/validate', [AdminController::class, 'createEvents'])->name('app.admin.events.create.validate');
+    Route::post('/events/delete/validate', [AdminController::class, 'deleteEvents'])->name('app.admin.events.delete.validate');
+
+    /* News */
+    Route::get('/news', [AdminController::class, 'viewNews'])->name('app.admin.news');
+    Route::get('/news/create', [AdminController::class, 'viewCreateNews'])->name('app.admin.news.create');
+    Route::get('/news/manage/{id}', [AdminController::class, 'viewManageNews'])->name('app.admin.news.manage');
+    Route::post('/news/manage/{id}/validate', [AdminController::class, 'manageNews'])->name('app.admin.news.manage.validate');
+    Route::post('/news/create/validate', [AdminController::class, 'createNews'])->name('app.admin.news.create.validate');
+    Route::post('/news/delete/validate', [AdminController::class, 'deleteNews'])->name('app.admin.news.delete.validate');
 });
 
 // Route::prefix('/ishop')->middleware('auth')->group(function () {
